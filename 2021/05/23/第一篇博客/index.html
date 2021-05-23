@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hello, Hexo">
+    <meta name="keywords" content="第一篇博客, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hello | Hexo</title>
+    <title>第一篇博客 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hello</h1>
+                    <h1 class="description center-align post-title">第一篇博客</h1>
                 </div>
             </div>
         </div>
@@ -464,7 +464,38 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>[toc]</p>
+<h1 id="LPA算法简介"><a href="#LPA算法简介" class="headerlink" title="LPA算法简介"></a>LPA算法简介</h1><p> 标签传播算法（Label Propagation Algorithm，LPA）是由Zhu等人于2002年提出，它是一种基于图的半监督学习方法，其基本思路是用已标记节点的标签信息去预测未标记节点的标签信息。</p>
+<p>​    LPA算法思路简单清晰，其基本过程如下：</p>
+<p>（1）为每个节点随机的指定一个自己特有的标签；</p>
+<p>（2）逐轮刷新所有节点的标签，直到所有节点的标签不再发生变化为止。对于每一轮刷新，节点标签的刷新规则如下：</p>
+<p>​    对于某一个节点，考察其所有邻居节点的标签，并进行统计，将出现个数最多的那个标签赋值给当前节点。当个数最多的标签不唯一时，随机选择一个标签赋值给当前节点。</p>
+<p>   在标签传播算法中，节点的标签更新通常有同步更新和异步更新两种方法。同步更新是指，节点x在t时刻的更新是基于邻接节点在t-1时刻的标签。异步更新是指，节点x在t时刻更新时，其部分邻接节点是t时刻更新的标签，还有部分的邻接节点是t-1时刻更新的标签。LPA算法在标签传播过程中采用的是同步更新，研究者们发现同步更新应用在二分结构网络中，容易出现标签震荡的现象。因此，之后的研究者大多采用异步更新策略来避免这种现象的出现。</p>
+<h1 id="LPA算法"><a href="#LPA算法" class="headerlink" title="LPA算法"></a>LPA算法</h1><h2 id="相似矩阵构建"><a href="#相似矩阵构建" class="headerlink" title="相似矩阵构建"></a>相似矩阵构建</h2><p>  令( x1，y1) …( xl，yl) 是已标注数据，YL={ y1…yl} ∈{ 1…C} 是类别标签，类别数 C 已知，且均存在于标签数据中。令( xl + 1，yl + 1) …( xl + u，yl + u) 为未标注数据，YU={ yl + 1…yl + u} 不可观测，l &lt;&lt; u，n=l+u。令数据集 X = { x1…xl + u} ∈R。问题转换为: 从数据集 X 中，利用YL的学习，为未标注数据集YU的每个数据找到对应的标签。将所有数据作为节点( 包括已标注和未标注数据) ，创建一个图，这个图的构建方法有很多，这里我们假设这个图是全连接的，节点i和节点j的边权重为：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902105910398-2122976786.png" alt="img"></p>
+<p>这里，α是超参。还有个非常常用的图构建方法是knn图，也就是只保留每个节点的k近邻权重，其他的为0，也就是不存在边，因此是稀疏的相似矩阵。</p>
+<h2 id="LPA算法-1"><a href="#LPA算法-1" class="headerlink" title="LPA算法"></a>LPA算法</h2><p>标签传播算法非常简单：通过节点之间的边传播label。边的权重越大，表示两个节点越相似，那么label越容易传播过去。我们定义一个NxN的概率转移矩阵P：</p>
+<p><img src="http://img.blog.csdn.net/20151013215842235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
+<p>​    Pij表示从节点i转移到节点j的概率。我们将YL和YU合并，我们得到一个NxC的soft label矩阵F=[YL;YU]。soft label的意思是，我们保留样本i属于每个类别的概率，而不是互斥性的，这个样本以概率1只属于一个类。当然了，最后确定这个样本i的类别的时候，是取max也就是概率最大的那个类作为它的类别的。那F里面有个YU，它一开始是不知道的，那最开始的值是多少？无所谓，随便设置一个值就可以了。</p>
+<p>​    简单的LP算法如下：</p>
+<p>（1）执行传播：F=PF；</p>
+<p>（2）重置F中labeled样本的标签：FL=YL；</p>
+<p>（3）重复步骤（1）和（2）直到F收敛。</p>
+<p>​    步骤（1）就是将矩阵P和矩阵F相乘，这一步，每个节点都将自己的label以P确定的概率传播给其他节点。如果两个节点越相似（在欧式空间中距离越近），那么对方的label就越容易被自己的label赋予。步骤（2）非常关键，因为labeled数据的label是事先确定的，它不能被带跑，所以每次传播完，它都得回归它本来的label。</p>
+<h2 id="变身的LPA算法"><a href="#变身的LPA算法" class="headerlink" title="变身的LPA算法"></a>变身的LPA算法</h2><p> 我们知道，我们每次迭代都是计算一个soft label矩阵F=[YL;YU]，但是YL是已知的，计算它没有什么用，在步骤（2）的时候，还得把它弄回来。我们关心的只是YU，那我们能不能只计算YU呢？我们将矩阵P做以下划分：</p>
+<p><img src="http://img.blog.csdn.net/20151013215900396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
+<p>令  <img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902113248038-1226449530.png" alt="img">，</p>
+<p>这时候，我们的算法就一个运算：</p>
+<p><img src="http://img.blog.csdn.net/20151013215910605?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="img"></p>
+<p>​    迭代上面这个步骤直到收敛就ok了。可以看到fU不但取决于labeled数据的标签及其转移概率，还取决了unlabeled数据的当前label和转移概率。因此LP算法能额外运用unlabeled数据的分布特点。</p>
+<h2 id="收敛性证明"><a href="#收敛性证明" class="headerlink" title="收敛性证明"></a>收敛性证明</h2><p>当n趋近于无穷大是，有</p>
+<p><img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902205614072-869131966.png" alt="img">，</p>
+<p>其中<img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902205747150-73338838.png" alt="img">是fU的初始值，因此我们需要证明 <img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902205940611-26566373.png" alt="img">因为P是行标准化的，并且PUU是P的子矩阵，所以</p>
+<p><img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902210417434-703424609.png" alt="img">，</p>
+<p>因此</p>
+<p><img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902210521772-1852800178.png" alt="img"></p>
+<p>当n趋近于无穷大时，rn=0，（PUU)n收敛于0，也意味着<img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902205940611-26566373.png" alt="img">因此<img src="https://img2018.cnblogs.com/blog/1225069/201909/1225069-20190902205747150-73338838.png" alt="img">的初始值是无关紧要的，同时第n次迭代时fU收敛。</p>
+
                 
             </div>
             <hr/>
@@ -480,7 +511,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">John Doe</a>
+                    <a href="/about" rel="external nofollow noreferrer">大杯柠檬加冰</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -490,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/05/23/hello/">http://example.com/2021/05/23/hello/</a>
+                    <a href="http://example.com/2021/05/23/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">http://example.com/2021/05/23/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -503,7 +534,7 @@
                     All articles in this blog are used except for special statements
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     reprint polocy. If reproduced, please indicate source
-                    <a href="/about" target="_blank">John Doe</a>
+                    <a href="/about" target="_blank">大杯柠檬加冰</a>
                     !
                 </span>
             </div>
@@ -695,9 +726,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/05/23/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
@@ -715,9 +747,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -726,6 +758,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -733,7 +766,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/05/23/hello/">
@@ -763,7 +796,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
