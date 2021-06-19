@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="谱聚类算法, 大杯柠檬加冰">
+    <meta name="keywords" content="mac下用python画图中文不会乱码, 大杯柠檬加冰">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>谱聚类算法 | 大杯柠檬加冰</title>
+    <title>mac下用python画图中文不会乱码 | 大杯柠檬加冰</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">谱聚类算法</h1>
+                    <h1 class="description center-align post-title">mac下用python画图中文不会乱码</h1>
                 </div>
             </div>
         </div>
@@ -443,14 +443,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-06-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-06-19
                 </div>
                 
 
@@ -469,22 +469,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="谱聚类算法-Spectral-Clustering"><a href="#谱聚类算法-Spectral-Clustering" class="headerlink" title="谱聚类算法(Spectral Clustering)"></a>谱聚类算法(Spectral Clustering)</h1><p>谱聚类(Spectral Clustering, SC)是一种基于图论的聚类方法——将带权无向图划分为两个或两个以上的最优子图，使子图内部尽量相似，而子图间距离尽量距离较远，以达到常见的聚类的目的。其中的最优是指最优目标函数不同，可以是割边最小分割——如图1的Smallest cut(如后文的Min cut)， 也可以是分割规模差不多且割边最小的分割——如图1的Best cut(如后文的Normalized cut)。<br><img src="https://images0.cnblogs.com/blog/540980/201306/26000216-cede1ed42ce64416a3201c227300257b.jpg" alt="img"><br>图1 谱聚类无向图划分——Smallest cut和Best cut</p>
-<h1 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h1><p>对于如下空间向量item-user matrix：<br>    <img src="https://images0.cnblogs.com/blog/540980/201306/26000217-60e1ad27f7b14d4583c469211f1ba37b.jpg" alt="img"><br>    如果要将item做聚类，常常想到k-means聚类方法，复杂度为o(tknm)，t为迭代次数，k为类的个数、n为item个数、m为空间向量特征数：</p>
-<pre><code>1 如果M足够大呢？
-
-2 K的选取？
-
-3 类的假设是凸球形的？
-
-4 如果item是不同的实体呢？
-
-5 Kmeans无可避免的局部最优收敛？
-
- ……
-</code></pre>
-<h2 id="1-1-图的表示"><a href="#1-1-图的表示" class="headerlink" title="1.1 图的表示"></a>1.1 图的表示</h2><p>如果我们计算出item与item之间的相似度，便可以得到一个只有item的相似矩阵，进一步，将item看成了Graph(G)中Vertex(V)，歌曲之间的相似度看成G中的Edge(E)，这样便得到我们常见的图的概念。<br>    对于图的表示(如图2)，常用的有：<br>邻接矩阵：E，e_{ij}表示vi和vi的边的权值，E为对称矩阵，对角线上元素为0，如图2-2。</p>
-<p>Laplacian矩阵：L = D – E， 其中di (行或列元素的和)，如图2-3。</p>
+                <h1 id="mac下用python画图中文不会乱码的代码"><a href="#mac下用python画图中文不会乱码的代码" class="headerlink" title="mac下用python画图中文不会乱码的代码"></a>mac下用python画图中文不会乱码的代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;Arial Unicode MS&#x27;</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>  <span class="comment"># 用来正常显示负号</span></span><br><span class="line">barWidth = <span class="number">0.2</span></span><br><span class="line"><span class="comment"># 设置柱子的高度</span></span><br><span class="line">bars1 =[<span class="number">61</span>,<span class="number">59</span>,<span class="number">64</span>,<span class="number">64</span>]</span><br><span class="line">bars2 = [<span class="number">68</span>,<span class="number">135</span>,<span class="number">185</span>,<span class="number">233</span>]</span><br><span class="line">bars3= [<span class="number">79</span>,<span class="number">151</span>,<span class="number">229</span>,<span class="number">309</span>]</span><br><span class="line">r1=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">r2 = [x + barWidth <span class="keyword">for</span> x <span class="keyword">in</span> r1]</span><br><span class="line"><span class="built_in">print</span>(r2)</span><br><span class="line">r3 = [x + barWidth <span class="keyword">for</span> x <span class="keyword">in</span> r2]</span><br><span class="line"><span class="built_in">print</span>(r3)</span><br><span class="line">r4 = [x + barWidth <span class="keyword">for</span> x <span class="keyword">in</span> r3]</span><br><span class="line"><span class="built_in">print</span>(r4)</span><br><span class="line"><span class="comment"># 创建柱子</span></span><br><span class="line">plt.bar(r1, bars1, color=<span class="string">&#x27;#3CB371&#x27;</span>, width=barWidth, edgecolor=<span class="string">&#x27;white&#x27;</span>, label=<span class="string">&#x27;哈哈哈哈哈哈哈&#x27;</span>,hatch=<span class="string">&quot;////&quot;</span>)</span><br><span class="line">plt.bar(r2, bars2, color=<span class="string">&#x27;#00BBFF&#x27;</span>, width=barWidth, edgecolor=<span class="string">&#x27;white&#x27;</span>, label=<span class="string">&#x27;MinMax&#x27;</span>,hatch=<span class="string">&quot;\\\\\\&quot;</span>)</span><br><span class="line">plt.bar(r3, bars3, color=<span class="string">&#x27;#FF5511&#x27;</span>, width=barWidth, edgecolor=<span class="string">&#x27;white&#x27;</span>, label=<span class="string">&#x27;MIN-Max-Min&#x27;</span>,hatch=<span class="string">&quot;---&quot;</span>)</span><br><span class="line"><span class="comment"># 添加x轴名称</span></span><br><span class="line"></span><br><span class="line">plt.xticks([r + barWidth <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(bars1))], [<span class="number">2000</span>,<span class="number">4000</span>,<span class="number">6000</span>,<span class="number">8000</span>])</span><br><span class="line">plt.xlabel(<span class="string">&quot; Numbers of Cloud Task&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;Maskespan/s&quot;</span>)</span><br><span class="line"><span class="comment"># 创建图例ll</span></span><br><span class="line">plt.legend()</span><br><span class="line"><span class="comment"># 展示图片</span></span><br><span class="line"><span class="comment"># plt.savefig(&#x27;test1.png&#x27;)</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>效果图片<br><img src="https://user-images.githubusercontent.com/40539672/122643491-a454ce00-d142-11eb-8f10-46f144e28c9f.png" alt="img"></p>
 
                 
             </div>
@@ -511,7 +497,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/06/04/%E8%B0%B1%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/">http://example.com/2021/06/04/%E8%B0%B1%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/</a>
+                    <a href="http://example.com/2021/06/19/mac%E4%B8%8B%E7%94%A8python%E7%94%BB%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B8%8D%E4%BC%9A%E4%B9%B1%E7%A0%81/">http://example.com/2021/06/19/mac%E4%B8%8B%E7%94%A8python%E7%94%BB%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B8%8D%E4%BC%9A%E4%B9%B1%E7%A0%81/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -716,9 +702,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2021/06/19/mac%E4%B8%8B%E7%94%A8python%E7%94%BB%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B8%8D%E4%BC%9A%E4%B9%B1%E7%A0%81/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="mac下用python画图中文不会乱码">
+                        
+                        <span class="card-title">mac下用python画图中文不会乱码</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            大杯柠檬加冰
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/06/13/X-train-X-test-y-train-y-test%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/">
                     <div class="card-image">
@@ -736,9 +761,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -746,55 +771,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/05/25/%E4%B8%BB%E5%8A%A8%E4%B8%89%E6%94%AF%E8%81%9A%E7%B1%BB/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="主动三支聚类">
-                        
-                        <span class="card-title">主动三支聚类</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%B8%89%E6%94%AF%E5%86%B3%E7%AD%96/" class="post-category">
-                                    三支决策
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%89%E6%94%AF%E8%81%9A%E7%B1%BB/">
-                        <span class="chip bg-color">三支聚类</span>
-                    </a>
-                    
                 </div>
                 
             </div>
