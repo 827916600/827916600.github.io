@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python如何划分等价类, 大杯柠檬加冰">
+    <meta name="keywords" content="Fast and Effective Active Clustering Ensemble Based on Density Peak, 大杯柠檬加冰">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python如何划分等价类 | 大杯柠檬加冰</title>
+    <title>Fast and Effective Active Clustering Ensemble Based on Density Peak | 大杯柠檬加冰</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python如何划分等价类</h1>
+                    <h1 class="description center-align post-title">Fast and Effective Active Clustering Ensemble Based on Density Peak</h1>
                 </div>
             </div>
         </div>
@@ -436,6 +436,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%B8%BB%E5%8A%A8%E5%8D%8A%E7%9B%91%E7%9D%A3%E8%81%9A%E7%B1%BB%E9%9B%86%E6%88%90/" class="post-category">
+                                主动半监督聚类集成
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -443,14 +452,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-12
+                    2021-07-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-14
+                    2021-07-15
                 </div>
                 
 
@@ -472,150 +481,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">def</span> <span class="token function">sep_pro</span><span class="token punctuation">(</span>sep<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    count3 <span class="token operator">=</span> <span class="token number">0</span>
-    Acc <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-    <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> sep<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        count1 <span class="token operator">=</span> <span class="token number">0</span>
-        count2 <span class="token operator">=</span> <span class="token number">0</span>
-        count3 <span class="token operator">+=</span> <span class="token number">1</span>
-        acc <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> value<span class="token punctuation">:</span>
-            count2 <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">if</span> i<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
-                count1 <span class="token operator">+=</span> <span class="token number">1</span>
-            acc <span class="token operator">=</span> count1 <span class="token operator">/</span> count2
-        <span class="token keyword">if</span> key <span class="token keyword">not</span> <span class="token keyword">in</span> Acc<span class="token punctuation">:</span>
-            Acc<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        Acc<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>acc<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> Acc
-
-
-<span class="token keyword">def</span> <span class="token function">sep_class</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    sep <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> c<span class="token punctuation">:</span>
-        count <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            vectors <span class="token operator">=</span> i<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-            count <span class="token operator">=</span> vectors <span class="token operator">*</span> <span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token operator">-</span> j<span class="token punctuation">)</span> <span class="token operator">+</span> count
-        <span class="token keyword">if</span> count <span class="token keyword">not</span> <span class="token keyword">in</span> sep<span class="token punctuation">:</span>
-            sep<span class="token punctuation">[</span>count<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        sep<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> sep
-
-
-<span class="token keyword">def</span> <span class="token function">twd</span><span class="token punctuation">(</span>Acc<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    POS <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-    BNG <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-    NEG <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-    a <span class="token operator">=</span> <span class="token number">0.63</span>
-    b <span class="token operator">=</span> <span class="token number">0.25</span>
-    <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> Acc<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> value<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> i <span class="token operator">></span> a<span class="token punctuation">:</span>
-                <span class="token keyword">if</span> key <span class="token keyword">not</span> <span class="token keyword">in</span> POS<span class="token punctuation">:</span>
-                    POS<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> i
-            <span class="token keyword">elif</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">:</span>
-                <span class="token keyword">if</span> key <span class="token keyword">not</span> <span class="token keyword">in</span> NEG<span class="token punctuation">:</span>
-                    NEG<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> i
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> key <span class="token keyword">not</span> <span class="token keyword">in</span> BNG<span class="token punctuation">:</span>
-                    <span class="token keyword">print</span><span class="token punctuation">(</span>BNG<span class="token punctuation">)</span>
-                    BNG<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> i
-    <span class="token keyword">return</span> POS<span class="token punctuation">,</span> BNG<span class="token punctuation">,</span> NEG
-
-
-<span class="token keyword">def</span> <span class="token function">huafenR</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> res1<span class="token punctuation">,</span> u<span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    R1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-    R2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-    R3 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> res<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> key1<span class="token punctuation">,</span> value1 <span class="token keyword">in</span> res1<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            a <span class="token operator">=</span> value1<span class="token operator">-</span>value
-            <span class="token keyword">if</span> key <span class="token operator">==</span> key1<span class="token punctuation">:</span>
-                <span class="token keyword">if</span> a <span class="token operator">></span> u<span class="token punctuation">:</span>
-                    R1<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value1
-                <span class="token keyword">elif</span> a <span class="token operator">&lt;</span> v<span class="token punctuation">:</span>
-                    R3<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value1
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    R2<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value1
-    <span class="token keyword">return</span> R1<span class="token punctuation">,</span> R2<span class="token punctuation">,</span> R3
-
-
-testset1 <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"/Users/wupeng/PycharmProjects/two-twd/breast.csv"</span><span class="token punctuation">,</span> header<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values<span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
-sep <span class="token operator">=</span> sep_class<span class="token punctuation">(</span>testset1<span class="token punctuation">)</span>
-Acc <span class="token operator">=</span> sep_pro<span class="token punctuation">(</span>sep<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>Acc<span class="token punctuation">)</span>
-res <span class="token operator">=</span> twd<span class="token punctuation">(</span>Acc<span class="token punctuation">)</span>
-testset2 <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"/Users/wupeng/PycharmProjects/two-twd/src/test1.csv"</span><span class="token punctuation">,</span> header<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values<span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
-sep1 <span class="token operator">=</span> sep_class<span class="token punctuation">(</span>testset2<span class="token punctuation">)</span>
-Acc1 <span class="token operator">=</span> sep_pro<span class="token punctuation">(</span>sep1<span class="token punctuation">)</span>
-res1 <span class="token operator">=</span> twd<span class="token punctuation">(</span>Acc1<span class="token punctuation">)</span>
-u <span class="token operator">=</span> <span class="token number">0.025</span>
-v <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">0.015</span>
-a <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token comment"># POS区域的R1,R2,R3</span>
-res2 <span class="token operator">=</span> huafenR<span class="token punctuation">(</span>res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> res1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> u<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-<span class="token comment"># NEG区域的R1,R2,R3</span>
-res3 <span class="token operator">=</span> huafenR<span class="token punctuation">(</span>res<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> res1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> u<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
-CPOS <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-CBND <span class="token operator">=</span> res<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-CNEG <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token comment"># 初始的POS区域</span>
-<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># POS区域的R1</span>
-    <span class="token keyword">for</span> key1<span class="token punctuation">,</span> value1 <span class="token keyword">in</span> res2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># POS区域的R2</span>
-        <span class="token keyword">if</span> key <span class="token operator">==</span> key1<span class="token punctuation">:</span>
-            CPOS<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
-    <span class="token keyword">for</span> key3<span class="token punctuation">,</span>value3 <span class="token keyword">in</span> res2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> key <span class="token operator">==</span> key3<span class="token punctuation">:</span>
-            CPOS<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
-
-<span class="token comment"># CBND的区域</span>
-<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> key1<span class="token punctuation">,</span> value1 <span class="token keyword">in</span> res2<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> key1 <span class="token operator">==</span> key<span class="token punctuation">:</span>
-            CBND<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
-<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> res<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> key4<span class="token punctuation">,</span> value4 <span class="token keyword">in</span> res3<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> key <span class="token operator">==</span> key4<span class="token punctuation">:</span>
-            CBND<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
-<span class="token comment"># CNEG的区域</span>
-<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> res<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> key1<span class="token punctuation">,</span> value1 <span class="token keyword">in</span> res3<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> key <span class="token operator">==</span> key1<span class="token punctuation">:</span>
-            CNEG<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
-    <span class="token keyword">for</span> key2<span class="token punctuation">,</span> value2 <span class="token keyword">in</span> res3<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> key <span class="token operator">==</span>key2<span class="token punctuation">:</span>
-            CNEG<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
-
-
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"CPOS"</span><span class="token punctuation">,</span> CPOS<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"CBND"</span><span class="token punctuation">,</span> CBND<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"CNEG"</span><span class="token punctuation">,</span> CNEG<span class="token punctuation">)</span>
-<span class="token comment">#</span>
-<span class="token comment"># print("POS区域的R1:", res2[0])</span>
-<span class="token comment"># print("POS区域的R2:", res2[1])</span>
-<span class="token comment"># print("POS区域的R3:", res2[2])</span>
-<span class="token comment">#</span>
-<span class="token comment"># print("NEG区域的R1:", res3[0])</span>
-<span class="token comment"># print("NEG区域的R2:", res3[1])</span>
-<span class="token comment"># print("NEG区域的R3:", res3[2])</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"POS :"</span><span class="token punctuation">,</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"POS1:"</span><span class="token punctuation">,</span> res1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"BNG :"</span><span class="token punctuation">,</span> res<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"BNG1:"</span><span class="token punctuation">,</span> res1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"NEG: "</span><span class="token punctuation">,</span> res<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"NEG1:"</span><span class="token punctuation">,</span> res1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
+                <h1 id="主要面向的问题"><a href="#主要面向的问题" class="headerlink" title="主要面向的问题"></a>主要面向的问题</h1><ol>
+<li>半监督聚类方法通过随机选取成对约束来提高性能，这可能导致冗余和不稳定性。在这种情况下，主动聚类通过有效的使用成对约束来最大限度的提高注释的效率。</li>
+<li>主动学习现有的方法缺乏对查询条件的全面考虑，并且重复运行半监督聚类来更新标签。<h1 id="主要的方法"><a href="#主要的方法" class="headerlink" title="主要的方法"></a>主要的方法</h1><h2 id="主动密度峰值聚类"><a href="#主动密度峰值聚类" class="headerlink" title="主动密度峰值聚类"></a>主动密度峰值聚类</h2></li>
+<li>在初始化阶段，测量对象$x_{i}$成为簇中心的概率，并采用多叉树表示成对对象$x_{i}$之间的关系。</li>
+<li>在静态选择阶段，通过查询具有代表性的对象$x_{i}$来构造初始领域，从而捕获聚类的模式。</li>
+<li>在动态选择阶段，通过迭代的查询具有最大局部不确定性的信息对象$x_{i}$，并通过一个快速更新策略（FUS）更新标签。<br><img src="https://i.loli.net/2021/07/15/siAcJ58HBerMUzw.png" alt="1.png"><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3>给定一个数据集X = $\left{x_{i}\right}_{i = 1}^{n}$</li>
+</ol>
 
                 
             </div>
@@ -642,7 +514,7 @@ CNEG <span class="token operator">=</span> <span class="token punctuation">&#123
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/07/12/python%E5%A6%82%E4%BD%95%E5%88%92%E5%88%86%E7%AD%89%E4%BB%B7%E7%B1%BB/">http://example.com/2021/07/12/python%E5%A6%82%E4%BD%95%E5%88%92%E5%88%86%E7%AD%89%E4%BB%B7%E7%B1%BB/</a>
+                    <a href="http://example.com/2021/07/14/Fast-and-Effective-Active-Clustering-Ensemble-Based-on-Density-Peak/">http://example.com/2021/07/14/Fast-and-Effective-Active-Clustering-Ensemble-Based-on-Density-Peak/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -847,9 +719,10 @@ CNEG <span class="token operator">=</span> <span class="token punctuation">&#123
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/07/14/Fast-and-Effective-Active-Clustering-Ensemble-Based-on-Density-Peak/">
                     <div class="card-image">
@@ -867,9 +740,9 @@ CNEG <span class="token operator">=</span> <span class="token punctuation">&#123
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -882,6 +755,7 @@ CNEG <span class="token operator">=</span> <span class="token punctuation">&#123
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -892,13 +766,13 @@ CNEG <span class="token operator">=</span> <span class="token punctuation">&#123
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/19/mac%E4%B8%8B%E7%94%A8python%E7%94%BB%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B8%8D%E4%BC%9A%E4%B9%B1%E7%A0%81/">
+                <a href="/2021/07/12/python%E5%A6%82%E4%BD%95%E5%88%92%E5%88%86%E7%AD%89%E4%BB%B7%E7%B1%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="mac下用python画图中文不会乱码">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python如何划分等价类">
                         
-                        <span class="card-title">mac下用python画图中文不会乱码</span>
+                        <span class="card-title">python如何划分等价类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -909,7 +783,7 @@ CNEG <span class="token operator">=</span> <span class="token punctuation">&#123
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
                             </span>
                         <span class="publish-author">
                             
