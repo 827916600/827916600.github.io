@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-15
+                    2021-07-19
                 </div>
                 
 
@@ -483,7 +483,7 @@
             <div id="articleContent">
                 <h1 id="主要面向的问题"><a href="#主要面向的问题" class="headerlink" title="主要面向的问题"></a>主要面向的问题</h1><ol>
 <li>半监督聚类方法通过随机选取成对约束来提高性能，这可能导致冗余和不稳定性。在这种情况下，主动聚类通过有效的使用成对约束来最大限度的提高注释的效率。</li>
-<li>主动学习现有的方法缺乏对查询条件的全面考虑，并且重复运行半监督聚类来更新标签。<h1 id="主要的方法"><a href="#主要的方法" class="headerlink" title="主要的方法"></a>主要的方法</h1><h2 id="主动密度峰值聚类"><a href="#主动密度峰值聚类" class="headerlink" title="主动密度峰值聚类"></a>主动密度峰值聚类</h2>在初始化阶段，测量对象$x_{i}$成为簇中心的概率，并采用多叉树表示成对对象$x_{i}$之间的关系。<br>在静态选择阶段，通过查询具有代表性的对象$x_{i}$来构造初始领域，从而捕获聚类的模式。<br>在动态选择阶段，通过迭代的查询具有最大局部不确定性的信息对象$x_{i}$，并通过一个快速更新策略（FUS）更新标签。<br><img src="https://i.loli.net/2021/07/15/siAcJ58HBerMUzw.png" alt="主动密度峰值聚类描述.png"><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3>给定一个数据集X = $\left{x_{i}\right}_{i = 1}^{n}$</li>
+<li>主动学习现有的方法缺乏对查询条件的全面考虑，并且重复运行半监督聚类来更新标签。<h1 id="主要的方法"><a href="#主要的方法" class="headerlink" title="主要的方法"></a>主要的方法</h1><h2 id="主动密度峰值聚类"><a href="#主动密度峰值聚类" class="headerlink" title="主动密度峰值聚类"></a>主动密度峰值聚类</h2>在初始化阶段，测量对象$x_{i}$成为簇中心的概率，并采用多叉树表示成对对象$x_{i}$之间的关系。<br>在静态选择阶段，通过查询具有代表性的对象$x_{i}$来构造初始领域，从而捕获聚类的模式。<br>在动态选择阶段，通过迭代的查询具有最大局部不确定性的信息对象$x_{i}$，并通过一个快速更新策略（FUS）更新标签。<br><img src="https://i.loli.net/2021/07/15/siAcJ58HBerMUzw.png" alt="主动密度峰值聚类描述.png"><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3>(a)计算局部密度 $ρ$<br>(b)最小化距离 $δ_i$<br>(c)描述树<br>(d)量化程度$γ_i$<h3 id="静态代表实例选择"><a href="#静态代表实例选择" class="headerlink" title="静态代表实例选择"></a>静态代表实例选择</h3>虽然决策图可以识别出具有代表性的实例，但这种方法有两个局限性：<br>1）必须绘制决策图，人为地选择转折点；<br>2）选择的聚类中心可能不正确。为了解决这些问题，我们首先利用滑动窗口来自动识别转折点。然后，查询潜在的聚类中心，构造一个初始邻域集。<br><code>flow st=&gt;start: 滑动窗口  op=&gt;operation: 潜在聚类中心ρ op1=&gt;operation: 问询过程 op3=&gt;end: 初始化社区N st(right)-&gt;op(right)-&gt;op1(right)-&gt;op3(right) &amp;</code></li>
 </ol>
 
                 
