@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="凸优化和非凸优化, 博客">
-    <meta name="description" content="凸优化和非凸优化 | 大杯柠檬加冰">
+    <meta name="description" content="今天阅读了一篇关于模糊成对约束的半监督模糊聚类的文章，涉及到了非凸优化问题，在此记录一下，关于非凸优化和凸优化的。数学中最优化问题的一般都是取$x^{} \in \chi$，使$f\left(x^{}\right)=\min {f(x): ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -466,7 +466,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>今天阅读了一篇关于模糊成对约束的半监督模糊聚类的文章，涉及到了非凸优化问题，在此记录一下，关于非凸优化和凸优化的。<br>数学中最优化问题的一般都是取$x^{<em>} \in \chi$，使$f\left(x^{</em>}\right)=\min {f(x): x \in \chi}$，其中$x$是n维向量，$\chi$是$x$的可行域，$f$是$\chi$上的实值函数。凸优化问题是指$\chi$是闭合的凸集且$f$是$\chi$上的凸函数的最优化问题，这两个条件人任意不满足则该问题即为非凸优化问题。<br>之所以要区分凸优化问题和非凸的问题原因在于凸优化问题中局部最优解同时也是全局最优解，这个特性使凸优化问题在一定意义上更易于解决，而一般的非凸最优化问题相比之下更难解决。</p>
+<p>非凸优化问题如何转化为凸优化问题的方法：<br>1）修改目标函数，使之转化为凸函数<br>2）抛弃一些约束条件，使新的可行域为凸集并且包含原可行域</p>
+
                 
             </div>
             <hr/>
