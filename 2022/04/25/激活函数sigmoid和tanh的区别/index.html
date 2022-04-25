@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="激活函数sigmoid和tanh的区别, 博客">
-    <meta name="description" content="激活函数sigmoid和tanh的区别 | 大杯柠檬加冰">
+    <meta name="description" content="在学习神经网络的时候，阅读论文时，多次看见tanh和sigmoid，在此记下其不同的区别
+激活函数sigmoid和tanh的区别simoid函数
+作为激活函数，sigmoid函数存在梯度弥散的问题，即当x的取值特别大或者特别小的时候，其梯度">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -428,12 +430,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category">
+                                神经网络
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -466,7 +481,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>在学习神经网络的时候，阅读论文时，多次看见tanh和sigmoid，在此记下其不同的区别</p>
+<h1 id="激活函数sigmoid和tanh的区别"><a href="#激活函数sigmoid和tanh的区别" class="headerlink" title="激活函数sigmoid和tanh的区别"></a>激活函数sigmoid和tanh的区别</h1><h2 id="simoid函数"><a href="#simoid函数" class="headerlink" title="simoid函数"></a>simoid函数</h2><ol>
+<li>作为激活函数，sigmoid函数存在梯度弥散的问题，即当x的取值特别大或者特别小的时候，其梯度几乎为零，这会导致参数的值无法更新。即所说的梯度消失。</li>
+<li>作为激活函数，sigmoid的不是中心对称的，且总是输出正数，这会导致在做非线性变换时，其只能“同意”上一层的结果，这也会导致随着深度的增加，结点的取值会“爆炸”，这也是在sigmoid函数中引入batch normalization变换的原因，因为随着层数增加，样本的分布会从0-1高斯分布逐渐偏移，偏移至sigmoid的饱和区域，导致反向传播很难进行，所以其收敛较慢，而batch-normalization会把样本分布强行拉回到0-1高斯分布。</li>
+<li>输出总是正数也会导致其优化路径出现“zigzag”现象，即所有权值的优化方向总是相同的（同时增大或减小）。<h2 id="tanh函数"><a href="#tanh函数" class="headerlink" title="tanh函数"></a>tanh函数</h2></li>
+<li>作为激活函数，其同样存在梯度弥散问题</li>
+<li>tanh函数相较于sigmoid函数的优点在于其是中心对称的，均值为0的分布，其能将一个0-1高斯分布依然映射到0附近的分布，保持零均值的特性，而且由于其有正有负，所以他可以对来自上一层的结果 “支持”(正)、“反对”(负)、“弃权”(0)。所以其收敛速度较sigmoid快一些。</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -529,7 +552,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -725,13 +752,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            大杯柠檬加冰
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    神经网络
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
